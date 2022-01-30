@@ -4,7 +4,7 @@ package ca.sait.Week4Lab_SimpleNoteKeeper.javabeans;
 import java.io.Serializable;
 
 /**
- * Represents a Note
+ * 
  * @author Madhu
  */
 public class Note implements Serializable {

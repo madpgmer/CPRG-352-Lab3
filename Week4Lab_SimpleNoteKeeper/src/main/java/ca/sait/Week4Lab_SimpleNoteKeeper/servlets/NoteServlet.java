@@ -25,7 +25,7 @@ public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //get data
+            //get data
         String query = request.getQueryString();
         if(query != null && query.contains("edit")){
             //Display edit form
@@ -34,6 +34,8 @@ public class NoteServlet extends HttpServlet {
         } else{
             //Display viewn note
             String path = getServletContext().getRealPath("/WEB-INF/note.txt");
+            
+            //Read file
             BufferedReader br = new BufferedReader(new FileReader(new File(path)));
         
             String title = br.readLine();
@@ -62,7 +64,7 @@ public class NoteServlet extends HttpServlet {
         String contents = request.getParameter("contents");
         
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
-        
+        // Create printwriter to post updated data
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false))); 
         
         pw.println(title);
